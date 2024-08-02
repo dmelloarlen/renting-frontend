@@ -9,7 +9,7 @@ export default function Home() {
   const [error, setError] = useState(null);
 const id=localStorage.getItem('id')
   useEffect(() => {
-    fetch('http://localhost:4000/allproducts', {
+    fetch('https://rental-backend-9vjg.onrender.com/allproducts', {
       headers: {
         'auth-token': 'Bearer ' + localStorage.getItem('token'),
       },
@@ -37,7 +37,7 @@ const id=localStorage.getItem('id')
     const c=window.confirm("Are you sure want to delete the vehical!!")
     if (c) {
       try {
-        const response = await fetch('http://localhost:4000/removeproduct', {
+        const response = await fetch('https://rental-backend-9vjg.onrender.com/removeproduct', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -75,17 +75,17 @@ const id=localStorage.getItem('id')
              {x=true}
               <div
                 className='card w-100 card1'
-                style={{ cursor: 'pointer', borderRadius: '15px', border: '3px solid black' }}
+                style={{ cursor: 'pointer',borderRadius:"15px",border:"1px"}}
               >
                 <div className='image-container'>
                   <img
-                    src={`http://localhost:4000/images/${item.image}`} // Make sure to include the base URL
+                    src={`https://rental-backend-9vjg.onrender.com/images/${item.image}`} // Make sure to include the base URL
                     className='card-img-top'
                     alt={item.name}
                     style={{ borderRadius: '15px 15px 0px 0px' }}
                   />
                 </div>
-                <div className='card-body'>
+                <div className='card-body'style={{backgroundColor:"#FBE9D0",borderRadius:"0px 0px 15px 15px"}}>
                   <h5 className='card-title mb-2'>
                     <strong>{item.name}</strong>
                   </h5>

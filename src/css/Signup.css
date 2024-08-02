@@ -14,6 +14,7 @@
     border-bottom: 2px solid red;
     border-radius: 20px;
     cursor: pointer;
+    background-color: transparent;
 }
 
 .form1 input:hover,.form1 select:hover,.form1 select option:hover{
@@ -25,7 +26,7 @@
     width: 100%;
     padding: 10px 0px;
     border: none;
-    background-color: red;
+    background-color: #FBE9D0;
     border-radius: 40px 0px;
     font-size:larger;
     font-weight: bold;

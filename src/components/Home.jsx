@@ -11,7 +11,7 @@ export default function Home() {
   const [vehical,setVehical]=useState()
 
   useEffect(() => {
-    fetch('http://localhost:4000/allproducts', {
+    fetch('https://rental-backend-9vjg.onrender.com/allproducts', {
       headers: {
         'auth-token': 'Bearer ' + localStorage.getItem('token'),
       },
@@ -38,7 +38,7 @@ export default function Home() {
   useEffect(() => {
     const fetchProductsAndOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/getorder");
+        const res = await axios.get("https://rental-backend-9vjg.onrender.com/getorder");
         if (res) {
           console.log(res.data);
           setVehical(res.data);
@@ -71,17 +71,17 @@ export default function Home() {
                       navigate('/rentnow/' + item._id);
                   }
               }}
-                style={{ cursor: 'pointer', borderRadius: '15px', border: '3px solid black' }}
+                style={{ cursor: 'pointer', borderRadius: '15px', border: '3px' }}
               >
                 <div className='image-container'>
                   <img
-                    src={`http://localhost:4000/images/${item.image}`} // Make sure to include the base URL
+                    src={`https://rental-backend-9vjg.onrender.com/images/${item.image}`} // Make sure to include the base URL
                     className='card-img-top'
                     alt={item.name}
                     style={{ borderRadius: '15px 15px 0px 0px' }}
                   />
                 </div>
-                <div className='card-body'>
+                <div className='card-body' style={{backgroundColor:"rgb(251, 233, 208)",borderRadius:"10px"}}>
                   <h5 className='card-title d-flex justify-content-between mb-2'>
                     <strong>{item.name}</strong>
                     {vehical.map((element)=>element.course==item._id?(<strong style={{color:"red"}}>Booked</strong>):null)}

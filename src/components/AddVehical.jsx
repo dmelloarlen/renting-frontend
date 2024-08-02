@@ -30,7 +30,7 @@ export default function AddVehicle() {
     formData.append("user", localStorage.getItem("id"));
 
     try {
-      const res = await axios.post("http://localhost:4000/addproduct", formData, {
+      const res = await axios.post("https://rental-backend-9vjg.onrender.com/addproduct", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       if (res.data.success) {
@@ -48,12 +48,12 @@ export default function AddVehicle() {
         <form className="container form1" style={{ flexWrap: "wrap" }} onSubmit={handleSubmit(onSubmit)}>
           <label>
             Vehicle Name:
-            <input type="text" placeholder="Enter name" className="input" {...register("vname", { required: true })} />
+            <input type="text" placeholder="Enter name" className="input" {...register("vname", { required: true })} style={{backgroundColor:"transparent"}} />
             {errors.vname && <span style={{ fontSize: "small", color: "red" }}>This field is required!</span>}
           </label>
           <label>
-            Vehicle Color:
-            <input type="text" placeholder="Color" className="input" {...register("vno", { required: true })} />
+            Vehicle Number:
+            <input type="text" placeholder="Vehicle number" className="input" {...register("vno", { required: true })} />
             {errors.vno && <span style={{ fontSize: "small", color: "red" }}>This field is required!</span>}
           </label>
           <div className='d-flex justify-content-between fw-wrap'>
@@ -62,7 +62,14 @@ export default function AddVehicle() {
               <select className='w-100' {...register("year", { required: true })}>
                 <option>2024</option>
                 <option>2023</option>
-                {/* Add more year options here */}
+                <option>2022</option>
+                <option>2021</option>
+                <option>2020</option>
+                <option>2019</option>
+                <option>2018</option>
+                <option>2017</option>
+                <option>2016</option>
+                <option>2015</option>
               </select>
             </label>
             <label className='w-50 ms-3'>

@@ -1,5 +1,6 @@
 body{
   font-family: 'Times New Roman', Times, serif;
+  background-color: #a1887fd0;
 }
 
 .inner-nav div{
@@ -30,7 +31,7 @@ body{
   }
   
   .popup-content {
-    background: #fff;
+    background: #FBE9D0;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -65,26 +66,35 @@ body{
   
   .form-group input {
     width: calc(100% - 20px);
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 15px;
+    border: none;
+    border-bottom: 2px solid red;
     font-size: 16px;
+    background-color: transparent;
   }
   
   .btn-submit {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: 2px solid red;;
+    padding: 0px 20px;
+    border-radius: 15px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
   }
   
   .btn-submit:hover {
-    background-color: #218838;
+    scale: 1.10;
   }
   
+  .nav-item{
+    color: rgb(223, 204, 204);
+  }
+
+  .nva{
+    color: red;
+  }
   
 
 

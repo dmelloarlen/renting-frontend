@@ -15,7 +15,7 @@ export default function RentNow() {
     // const code=data.zip
 
     useEffect(() => {
-        fetch("http://localhost:4000/allproducts")
+        fetch("https://rental-backend-9vjg.onrender.com/allproducts")
             .then((res) => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok');
@@ -42,17 +42,17 @@ export default function RentNow() {
     }
 
     if (!data) {
-        return <div>Loading...</div>;  // Show a loading message while fetching data
+        return <div>Loading.....</div>
     }
 
     return (
         <div className="container">
             <div className="container d-flex mt-3 justify-content-between" >
-                <div className="d-flex ms-5" >
+               {data && <div className="d-flex ms-5" >
                     <div className="image-container mb-3 w-50">
-                        <img src={`http://localhost:4000/images/${data.image}`} className="w-5" alt={data.name} style={{borderRadius:"20px"}}/>
+                        <img src={`https://rental-backend-9vjg.onrender.com/images/${data.image}`} className="w-5" alt={data.name} style={{borderRadius:"20px"}}/>
                     </div>
-                    <div className="d-flex ms-5" style={{ width: "500px" }}>
+                    <div className="d-flex ms-5" style={{ width: "500px"}}>
                         <div>
                             <h3>{data.name}</h3>
                             <hr />
@@ -64,26 +64,26 @@ export default function RentNow() {
                             <div>Type:{data.description}</div>
                         </div>
                     </div>
-                </div>
+                </div>}
             </div>
             <div className="d-flex justify-content-between">
                 <button 
                     className="d-flex justify-content-center py-1 me-2"
                     onClick={() => setMap(!map)}
-                    style={{ backgroundColor: "red", borderRadius: "20px 0px 0px 20px", width: "100%", border: "none" }}
+                    style={{ backgroundColor: "#FBE9D0", borderRadius: "20px 0px 0px 20px", width: "100%", border: "none" }}
                 >
                     <strong>
                         {!map ? (
-                            <div>Show Map <img src={dropdown} width={"25px"} alt="dropdown" /></div>
+                            <div>Show Map <img src={dropdown} width={"10px"} alt="dropdown" /></div>
                         ) : (
-                            <div>Hide Map <img src={dropdown} width={"25px"} style={{ transform: "rotate(180deg)" }} alt="dropdown" /></div>
+                            <div>Hide Map <img src={dropdown} width={"10px"} style={{ transform: "rotate(180deg)" }} alt="dropdown" /></div>
                         )}
                     </strong>
                 </button>
                 <button 
                     className="d-flex justify-content-center py-1 ms-2"
                     onClick={() =>localStorage.getItem("state")=="true"?navigate(`/exit/${data._id}`):toast.error("You are not logdin!!")}
-                    style={{ backgroundColor: "red", borderRadius: "0px 20px 20px 0px", width: "100%", border: "none" }}
+                    style={{ backgroundColor: "#FBE9D0",borderRadius: "0px 20px 20px 0px", width: "100%", border: "none" }}
                 >
                     <strong>Rent Now</strong>
                 </button>

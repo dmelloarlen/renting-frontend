@@ -23,7 +23,7 @@ export default function Recipt() {
   };
   const a=useParams()
   useEffect(() => {
-    fetch("http://localhost:4000/getorder")
+    fetch("https://rental-backend-9vjg.onrender.com/getorder")
         .then((res) => {
             if (!res.ok) {
                 throw new Error('Network response was not ok');
@@ -44,7 +44,7 @@ useEffect(() => {
   const getVehicalDetails = async () => {
     console.log(a.vid)
     try {
-      const res = await axios.get(`http://localhost:4000/allproducts/${a.vid}`);
+      const res = await axios.get(`https://rental-backend-9vjg.onrender.com/allproducts/${a.vid}`);
       if (res) {
         console.log(res.data);
         setVehical(res.data);

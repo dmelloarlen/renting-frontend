@@ -38,7 +38,7 @@ export default function Signup() {
       password: data.password,
     };
     try {
-      const res = await axios.post("http://localhost:4000/signup",{
+      const res = await axios.post("https://rental-backend-9vjg.onrender.com/signup",{
         name:userInfo.name,
         phone:userInfo.phone,
         email:userInfo.email,

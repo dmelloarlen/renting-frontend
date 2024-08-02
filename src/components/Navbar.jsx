@@ -31,7 +31,7 @@ export default function Navbar() {
       password: data.password,
     };
     try {
-      const res = await axios.post("http://localhost:4000/login", {
+      const res = await axios.post("https://rental-backend-9vjg.onrender.com/login", {
         email: userInfo.email,
         password: userInfo.password,
       });
@@ -55,10 +55,10 @@ export default function Navbar() {
   return (
     <div>
       <nav
-        className="navbar navbar-expand-lg px-3 bg-dark"
-        style={{ content: "" }}
+        className="navbar navbar-expand-lg px-3 nva"
+        style={{ content: "",backgroundColor:"#FBE9D0"}}
       >
-        <a className="navbar-brand" href="/">
+        <a className="navbar-brand" href="/" style={{color:"#244855"}}>
           Rentz
         </a>
         <div className="collapse navbar-collapse" id="navbarNav">
@@ -70,14 +70,14 @@ export default function Navbar() {
             </li> */}
            {logdin &&
            <>
-            <li className="nav-item">
+            <li className="nav-item" style={{color:"red"}}>
               <Link to={"/myrents"} className="nav-link">
                 My Rents
               </Link>
             </li>
             <li className="nav-item">
               <Link to={"/addvehical"} className="nav-link">
-                Add Vehical
+                Add Vehicle
               </Link>
             </li>
             <li className="nav-item">
@@ -90,20 +90,20 @@ export default function Navbar() {
           </ul>
         </div>
         <button
-          className="btn btn-outline-success my-2 my-sm-0 ml-auto"
+          className="btn my-2 my-sm-0 ml-auto"
           type="button"
           onClick={togglePopup}
         >
-          {logdin ? "Logout" : "Login"}
+          <strong style={{color:"blue",textDecoration:"underline"}}>{logdin ? "Logout" : "Login"}</strong>
         </button>
       </nav>
       {showPopup && (
         <div className="popup">
-          <div className="popup-content">
+          <div className="popup-content"  style={{backgroundColor:""}}>
             <span className="close" onClick={togglePopup}>
               &times;
             </span>
-            <h2>Login</h2>
+            <h2 style={{fontFamily:"serif"}}>Login</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form-group">
                 <label className="d-flex justify-content-start">

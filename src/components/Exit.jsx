@@ -17,7 +17,7 @@ export default function Exit() {
     const getVehicalDetails = async () => {
       // console.log(a.id)
       try {
-        const res = await axios.get(`http://localhost:4000/allproducts/${id}`);
+        const res = await axios.get(`https://rental-backend-9vjg.onrender.com/allproducts/${id}`);
         if (res) {
           console.log(res.data);
           setVehical(res.data);
@@ -45,7 +45,7 @@ export default function Exit() {
         days:data.days
       };
       try {
-        const res1 = await axios.post("http://localhost:4000/rent", {
+        const res1 = await axios.post("https://rental-backend-9vjg.onrender.com/rent", {
           name:rentInfo.name,
           user:localStorage.getItem("id"),
           phone:rentInfo.phone,
@@ -57,7 +57,7 @@ export default function Exit() {
           image:vehical.image
         });
         if (res1.data) {
-          const res = await axios.patch(`http://localhost:4000/update/${id}`
+          const res = await axios.patch(`https://rental-backend-9vjg.onrender.com/update/${id}`
 , {
             status:true
           });
