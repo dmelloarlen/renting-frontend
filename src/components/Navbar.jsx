@@ -59,7 +59,7 @@ export default function Navbar() {
         style={{ content: "",backgroundColor:"#FBE9D0"}}
       >
         <a className="navbar-brand" href="/" style={{color:"#244855"}}>
-          Rentz
+          Rents
         </a>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mr-auto">
